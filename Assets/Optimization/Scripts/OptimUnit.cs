@@ -44,18 +44,18 @@ public class OptimUnit : MonoBehaviour
             zRotation *= -1;
 
         transform.Rotate(xRotation, 0, zRotation);
-        
+
         Move();
 
         //check if we are moving away from the zone and invert velocity if this is the case
-        if (transform.position.x > areaSize.x && currentVelocity.x > 0
+        if ((transform.position.x > areaSize.x && currentVelocity.x > 0)
             || (transform.position.x < -areaSize.x && currentVelocity.x < 0))
         {
             currentVelocity.x *= -1;
             PickNewVelocityChangeTime(); //we pick a new change time as we changed velocity
         }
 
-        if (transform.position.z > areaSize.z && currentVelocity.z > 0
+        if ((transform.position.z > areaSize.z && currentVelocity.z > 0)
             || (transform.position.z < -areaSize.z && currentVelocity.z < 0))
         {
             currentVelocity.z *= -1;
